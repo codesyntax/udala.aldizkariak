@@ -1,0 +1,14 @@
+{
+    "title": "Udal aldizkariak",
+    "description": "Udal aldizkariak",
+    "author": "Lur Ibargutxi",
+    "email": "libargutxi@codesyntax.com",
+    "github_organization": "udala",
+    "use_prerelease_versions": "No",
+    "plone_version": "6.2.2",
+    "python_package_name": "udala.aldizkariak",
+    "feature_headless": true,
+    "initialize_ci": true,
+    "initialize_documentation": true,
+    "__template__": "backend_addon"
+}
