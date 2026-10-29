@@ -1,0 +1,32 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="udala.aldizkariak"
+    >
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Udal aldizkariak: Install"
+      description="Package to configure a new Udal aldizkariak site"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/default"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="Udal aldizkariak: Uninstall"
+      description="Uninstall Udal aldizkariak setup."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/uninstall"
+      />
+
+  <!-- Hide Uninstall Profile-->
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="udala.aldizkariak"
+      />
+
+
+  <include package=".upgrades" />
+
+</configure>
