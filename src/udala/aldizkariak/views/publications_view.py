@@ -2,6 +2,7 @@ from plone.app.contenttypes.browser.collection import CollectionView
 from zope.interface import implementer
 from zope.interface import Interface
 
+
 # from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
