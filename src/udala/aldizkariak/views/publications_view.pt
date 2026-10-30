@@ -30,25 +30,26 @@
                 <tal:repeat tal:repeat="brain batch">
                   <div class="col-6 col-md-3"
                        tal:define="
-                         element python:view.aldizkaria_item_dict(brain, 0);
+                         element python:view.publication_item_dict(brain, 0);
                        "
                   >
-                    <div class="aldizkaria mb-3">
-                      <div class="no-decoration d-flex flex-column align-items-center py-3 position-relative">
-                        <div class="aldizkaria-image">
+                    <div class="card card-aldizkaria">
 
-                          <img tal:attributes="
-                                 src element/image;
-                                 title element/title;
-                                 alt element/title;
-                               " />
-                        </div>
-                        <a class="stretched-link h4 mt-3 text-center no-underline"
+
+
+                      <img tal:attributes="
+                             src element/image;
+                             title element/title;
+                             alt element/title;
+                           " />
+                      <div class="card-title text-center">
+                        <a class="no-underline stretched-link text-dark"
                            href="${brain/getURL}"
                         >
                         ${brain/Title}
                         </a>
                       </div>
+
                     </div>
                   </div>
                 </tal:repeat>

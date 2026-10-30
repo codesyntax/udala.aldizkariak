@@ -10,7 +10,7 @@ class IPublicationView(Interface):
 
 
 @implementer(IPublicationView)
-class PublicationkView(CollectionView):
+class PublicationsView(CollectionView):
     # If you want to define a template here, please remove the template from
     # the configure.zcml registration of this view.
     # template = ViewPageTemplateFile('publicationk_view.pt')

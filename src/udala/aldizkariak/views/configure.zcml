@@ -22,7 +22,23 @@
       class=".publications_view.PublicationsView"
       template="publications_view.pt"
       permission="zope2.View"
-      layer="azpeitia.addon.interfaces.IBrowserLayer"
+      layer="udala.aldizkariak.interfaces.IBrowserLayer"
+      />
+
+  <browser:page
+      name="publications-view"
+      for="collective.folderishcollection.content.folderishcollection.IFolderishCollection"
+      class=".publications_view.PublicationsView"
+      template="publications_view.pt"
+      permission="zope2.View"
+      layer="udala.aldizkariak.interfaces.IBrowserLayer"
+      />
+
+  <browser:page
+      name="embed"
+      for="udala.aldizkariak.content.publication.IPublication"
+      class=".publication_view.EmbedPublicationView"
+      permission="zope2.View"
       />
 
 </configure>

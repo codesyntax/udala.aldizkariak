@@ -13,7 +13,7 @@
         <div class="container">
           <div id="column-content">
             <div class="row">
-              <div class="col-md-10 offset-md-1">
+              <div class="col-md-12">
                 <div id="news-container">
                   <header id="header-container">
                     <h1 class="documentFirstHeading"
