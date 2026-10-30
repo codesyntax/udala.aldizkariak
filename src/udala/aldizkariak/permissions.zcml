@@ -2,4 +2,10 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
+    <permission
+        id="udala.aldizkariak.AddPublication"
+        title="udala.aldizkariak: Add Publication"
+    />
+
+
 </configure>
