@@ -31,8 +31,7 @@ dependencies = [
     "Products.CMFPlone",
     "plone.api",
     "plone.restapi",
-    "plone.volto",
-    
+
 ]
 
 [project.optional-dependencies]

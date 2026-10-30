@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-25 17:12+0000\n"
+"POT-Creation-Date: 2026-10-30 08:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,3 +13,37 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: udala.aldizkariak\n"
+
+#: udala/aldizkariak/profiles.zcml:13
+msgid "Package to configure a new Udal aldizkariak site"
+msgstr ""
+
+#: udala/aldizkariak/profiles/default/types/Publication.xml
+msgid "Publication"
+msgstr ""
+
+#: udala/aldizkariak/content/publication.py:24
+msgid "Publication pdf"
+msgstr ""
+
+#: udala/aldizkariak/views/publication_view.pt:31
+#: udala/aldizkariak/views/publication_view.pt:80
+msgid "See fullscreen"
+msgstr ""
+
+#: udala/aldizkariak/profiles.zcml:13
+msgid "Udal aldizkariak: Install"
+msgstr ""
+
+#: udala/aldizkariak/profiles.zcml:21
+msgid "Udal aldizkariak: Uninstall"
+msgstr ""
+
+#: udala/aldizkariak/profiles.zcml:21
+msgid "Uninstall Udal aldizkariak setup."
+msgstr ""
+
+#. Default: "Your browser does not support iframes. Download the document at ${link}"
+#: udala/aldizkariak/views/publication_view.pt:44
+msgid "label_publication_does_not_support_iframes"
+msgstr ""
