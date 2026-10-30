@@ -1,35 +1,92 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
-      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
       i18n:domain="udala.aldizkariak"
-      metal:use-macro="context/main_template/macros/master">
-<body>
+>
 
-  <metal:custom_title fill-slot="content-title">
-    <h1 tal:replace="structure context/@@title" />
+  <body>
 
-    <!-- @@title view template: -->
-    <!--
-    <h1 tal:define="title context/Title" tal:condition="title" tal:content="title">
-      Title or id
-    </h1>
-    -->
+    <metal:content-main fill-slot="main">
+      <main id="content">
+        <div class="container">
+          <div id="column-content">
+            <div class="row">
+              <div class="col-md-10 offset-md-1">
+                <div id="news-container">
+                  <header id="header-container">
+                    <h1 class="documentFirstHeading"
+                        tal:content="context/Title"
+                    ></h1>
+                  </header>
+                  <div class="d-flex justify-content-between my-5 d-md-none">
+                    <p class="mb-5">
+                      <a class="btn btn-secondary"
+                         tal:attributes="
+                           href string:${here/absolute_url}/embed/${context/id};
+                         "
+                      >
+                      See fullscreen
+                      </a>
+                    </p>
+                  </div>
+                  <iframe class="d-none d-sm-block"
+                          height="1100px"
+                          style="border: none;"
+                          width="100%"
+                          tal:attributes="
+                            src string:${here/absolute_url}/embed/${context/id}&embedded=true;
+                          "
+                          i18n:translate="label_publication_does_not_support_iframes"
+                  >
+                  Your browser does not support iframes. Download the document at
+                    <a href=""
+                       tal:content="string:${here/absolute_url}/at_download/file"
+                       tal:attributes="
+                         href string:${here/absolute_url}/at_download/file;
+                       "
+                       i18n:name="link"
+                    >http://my.file.com/download.pdf</a>
+                  </iframe>
+                  <iframe class="d-block d-sm-none"
+                          height="1100px"
+                          style="border: none;"
+                          type="application/pdf"
+                          width="100%"
+                          tal:attributes="
+                            src string:https://docs.google.com/viewer?url=${context/absolute_url}/@@download/file/${context/file/filename}?time=${view/time_for_no_caching}&embedded=true;
+                          "
+                          i18n:translate="label_publication_does_not_support_iframes"
+                  >
+                  Your browser does not support iframes. Download the document at
+                    <a href=""
+                       tal:content="string:${here/absolute_url}/at_download/file"
+                       tal:attributes="
+                         href string:${here/absolute_url}/at_download/file;
+                       "
+                       i18n:name="link"
+                    >http://my.file.com/download.pdf</a>
+                  </iframe>
+                  <div class="d-flex justify-content-between my-5 d-none d-md-block">
+                    <p class="mb-5">
+                      <a class="btn btn-primary no-underline"
+                         tal:attributes="
+                           href string:${here/absolute_url}/embed/${context/id};
+                         "
+                      >
+                      See fullscreen
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  </metal:custom_title>
+      </main>
+    </metal:content-main>
+  </body>
 
-  <metal:custom_description fill-slot="content-description">
-    <p tal:replace="structure context/@@description" />
-  </metal:custom_description>
-
-  <metal:content-core fill-slot="content-core">
-  <metal:block define-macro="content-core">
-
-    <h2>Main content</h2>
-    <!--<div tal:replace="view/my_custom_view_method" />-->
-    <!--<div tal:replace="context/my_custom_field" />-->
-
-  </metal:block>
-  </metal:content-core>
-</body>
 </html>

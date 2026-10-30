@@ -2,17 +2,27 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
-    i18n_domain="udala.aldizkariak">
+    i18n_domain="udala.aldizkariak"
+    >
 
- <!-- -*- extra stuff goes here -*- -->
+  <!-- -*- extra stuff goes here -*- -->
 
   <browser:page
-    name="publication-view"
-    for="*"
-    class=".publication_view.PublicationView"
-    template="publication_view.pt"
-    permission="zope2.View"
-    layer="udala.aldizkariak.interfaces.IBrowserLayer"
-    />
+      name="view"
+      for="udala.aldizkariak.content.publication.IPublication"
+      class=".publication_view.PublicationView"
+      template="publication_view.pt"
+      permission="zope2.View"
+      layer="udala.aldizkariak.interfaces.IBrowserLayer"
+      />
+
+  <browser:page
+      name="publications-view"
+      for="plone.app.contenttypes.interfaces.ICollection"
+      class=".publications_view.PublicationsView"
+      template="publications_view.pt"
+      permission="zope2.View"
+      layer="azpeitia.addon.interfaces.IBrowserLayer"
+      />
 
 </configure>

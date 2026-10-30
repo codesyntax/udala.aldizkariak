@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="azpeitia.addon"
+>
+
+  <body>
+
+    <metal:content-main fill-slot="main">
+      <div id="news-filter-content">
+        <main id="content">
+          <div class="container">
+            <header class="row"
+                    id="header-container"
+            >
+              <div class="col-sm-12">
+                <h1 class="text-bottom-border text-bottom-border-primary"
+                    tal:content="context/Title"
+                ></h1>
+              </div>
+            </header>
+            <div id="column-content"
+                 tal:define="
+                   batch view/batch;
+                 "
+            >
+              <div class="row">
+                <tal:repeat tal:repeat="brain batch">
+                  <div class="col-6 col-md-3"
+                       tal:define="
+                         element python:view.aldizkaria_item_dict(brain, 0);
+                       "
+                  >
+                    <div class="aldizkaria mb-3">
+                      <div class="no-decoration d-flex flex-column align-items-center py-3 position-relative">
+                        <div class="aldizkaria-image">
+
+                          <img tal:attributes="
+                                 src element/image;
+                                 title element/title;
+                                 alt element/title;
+                               " />
+                        </div>
+                        <a class="stretched-link h4 mt-3 text-center no-underline"
+                           href="${brain/getURL}"
+                        >
+                        ${brain/Title}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </tal:repeat>
+              </div>
+              <div metal:use-macro="context/batch_macros/macros/navigation"></div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </metal:content-main>
+  </body>
+
+</html>
